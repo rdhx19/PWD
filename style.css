@@ -1,0 +1,372 @@
+@media only screen and (min-width: 720px) {
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    scroll-behavior: smooth;
+    font-family: "Akaya Kanadaka", system-ui;
+}
+
+/* Slide pertama */
+.slide1 {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fdf3dd;
+    animation-name: fadein;
+    animation-duration: 3s;
+}
+.slide1 .teks{
+    text-shadow: 2px 2px 2px rgb(182, 179, 0);
+    margin-bottom: 5px;
+}
+.slide1 .banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Agar video tidak melebihi batas layar */
+    z-index: -1; /* Video di latar belakang */
+}
+
+.slide1 .banner video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.slide1 .container .teks{
+    position: relative;
+    font-family: 'Pacifico', cursive;
+    font-size: 6em;
+    z-index: 1; /* Konten berada di atas video */
+    animation-name: welcome;
+    animation-duration: 5s;
+}
+
+@keyframes welcome {
+    0% {opacity: 0; top: 100px;}
+    100% {opacity: 1.0; top: 0px;}
+}
+
+@keyframes fadein {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+/* Menu */
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5A623;
+    padding: 10px 20px;
+    position: fixed;
+    width: 50%;
+    top: 30px;
+    border-radius: 50px;
+    box-shadow: 2px 2px 5px #000000;
+    z-index: 1; /* Menu di atas video */
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu ul li button {/*bagian button*/
+    font-size: 1.2em;
+    text-shadow: 2px 2px 2px #000000;
+    border: none;
+    background: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.menu li:hover {
+    transform: scale(1.1,1.1);
+    color: #111;
+    text-shadow: 2px 2px 2px #ffffff;
+    border-radius: 2px;
+}
+.menu ul li {/*bagian ikon*/
+    text-shadow: 2px 2px 2px #000000;
+    border: none;
+    background: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin: 0 35px;
+}
+.menu li:hover {
+    color: #111;
+    text-shadow: 2px 2px 2px #ffffff;
+    border-radius: 2px;
+}
+.garis{
+        height: 100px;
+        width: 5px;
+        background-color: #fff;
+        position: relative;
+        margin-left: 50%;
+        margin-top: 5%;
+ }
+ #more{
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 8%;
+    background-color: #000000;
+    color: white;
+    padding: 20px 50px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none; /* Hilangkan garis bawah link */
+    display: inline-block; /* Supaya elemen tampil seperti tombol */
+ }
+ #gofood{
+    width: 7em;
+    margin-top: 4px;
+}
+#gofoodtext{
+    width: 3.2em;
+    margin-top: 4px;
+}
+
+/* Slide kedua */
+.menu-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    max-width: 1200px;
+    width: 100%;
+
+}
+
+.slide2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    background-color: #fdf3dd;
+    padding: 20px; /* Memberikan ruang di sekitar konten */
+    height: auto;
+    overflow:auto;
+}
+
+.animated-text{
+    font-size: 40px;
+    font-weight: 600;
+    min-width: 280px;
+    margin-top: 3cm ;
+}
+
+.animated-text span{
+    position:relative;
+}
+
+.animated-text span::before{
+    content: "Pasti";
+    color: #000000;
+    animation: words 20s infinite;
+}
+
+.animated-text span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    background-color: #fdf3dd;
+    border-left: 2px solid #000000;
+    right: -8px;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+    to{
+        border-left: 2px solid #ff7f5000;
+    }
+}
+
+@keyframes words {
+    0%,20%{
+        content: "Efisien";
+    }
+    21%,40%{
+        content: "Murah";
+    }
+    41%,60%{
+        content: "Simpel";
+    }
+    61%,80%{
+        content: "Diskon";
+    }
+    81%,100%{
+        content: "Cashback";
+    }
+}
+
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+}
+#menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%; /* Memastikan grid menggunakan lebar penuh */
+}
+
+.slide2 .menu-item {
+    display: flex;
+    flex-direction: column; /* Atur elemen secara vertikal */
+    justify-content: flex-start; /* Mulai dari atas */
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    height: auto; /* Sesuaikan tinggi kontainer */
+}
+
+
+.slide2 .menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.slide2 .menu-item img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    height: 150px; /* Membatasi tinggi gambar agar seragam */
+}
+
+.slide2 .menu-item p {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000000;
+}
+#caption {
+    font-size: .875rem;
+    color: #4b4a4a;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.slide2 button {
+    margin-top: auto; /* Dorong tombol ke bawah jika ada elemen di atasnya */
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    height: 40px; /* Pastikan tombol memiliki tinggi tetap */
+    width: 100%; /* Sesuaikan lebar tombol */
+    box-sizing: border-box;
+}
+
+
+.slide2 button:hover {
+    background-color: #218838;
+}
+
+/* Slide ketiga */
+.slide3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fdf3dd;
+    overflow: visible;
+}
+.gmaps {
+    background-color: white; 
+    padding: 2% 8%; 
+    border-radius: 10px; 
+    border: 2px solid #ddd; 
+    max-width: 850px; 
+    margin: 0 auto; 
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.dekstop {
+    width: 100%;
+    height: 400px;
+    border: none; 
+}
+.mobile{
+    display: none;
+    width: 100%;
+    height: 400px;
+    border: none; 
+}
+.mobile-menu-toggle {
+    display: none;
+}
+/*bagian footer*/
+#Kontak {
+    background-color: #000;
+    color: #fff;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    margin-left: 5cm;
+    margin-right: 5cm;
+}
+#teks{
+    position: relative;
+    font-size: 3em;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 2px 2px 2px rgb(182, 179, 0);
+    margin-bottom: 5px;
+    
+    text-align: center;
+}
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+}
